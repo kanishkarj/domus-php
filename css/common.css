@@ -1,6 +1,28 @@
+.navbar-custom{
+    background-color: #7B68EE;
+    border-radius: 0px;
+    height: auto;
+}
 a{
     color: white;
 }
+
+.navbar-collapse.collapse{
+    display: block !important;
+}
+
+.navbar-nav>li, .navbar-nav{
+    float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child{
+    margin-right: -15px !important;
+}
+
+.navbar-right{
+    float: right !important;
+}
+
 .navbar-brand {
     position: absolute;
     width: 100%;
@@ -12,29 +34,22 @@ a{
 .navbar-toggle {
     z-index:3;
 }
-.navbar-light{
-    background-color: #7B68EE;
-    border-radius: 0px;
-}
+
 .form-group{
     display: inline;
 }
-.search-dropdown{
-    background-color: #7B68EE;
-    width: 40em;
-    border-color: white;
-    box-shadow: none;
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-    border-radius: 0px;
-    border-top-width: 0.5em;
-
+#search{
+    width: 80%;
+    display: none;
+    float: none;
+    margin: auto;
+    margin-top: 0.5em !important;
 }
-.search-dropdown .btn-default{
-    background-color: #7B68EE;
-    border-color: #7B68EE;
+#search .btn-default{
+    background-color: lightgray;
+    border-color: lightgray;
     border-radius: 0px;
 }
-.search-dropdown .btn-default:hover {
+#search .btn-default:hover {
     background-color:#337ab7 !important;
 }
