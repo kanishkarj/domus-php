@@ -1,0 +1,40 @@
+a{
+    color: white;
+}
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+.navbar-light{
+    background-color: #7B68EE;
+    border-radius: 0px;
+}
+.form-group{
+    display: inline;
+}
+.search-dropdown{
+    background-color: #7B68EE;
+    width: 40em;
+    border-color: white;
+    box-shadow: none;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    border-radius: 0px;
+    border-top-width: 0.5em;
+
+}
+.search-dropdown .btn-default{
+    background-color: #7B68EE;
+    border-color: #7B68EE;
+    border-radius: 0px;
+}
+.search-dropdown .btn-default:hover {
+    background-color:#337ab7 !important;
+}
