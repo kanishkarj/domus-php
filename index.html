@@ -2,28 +2,27 @@
 <html>
 <head>
     <!-- loading libraries -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
     <title>
         Project Name
     </title>
 </head>
 <body>
 <header>
-    <nav class="nav-bar navbar-custom">
+    <nav class="nav-bar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Domus</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Create</a></li>
-            </ul>
-
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
+                <li><a href="create.html">Create</a></li>
+                <li>
                     <a onClick="a_onClick()" href="#">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
@@ -44,5 +43,10 @@
         </div>
     </form>
 </div>
+<main id="container" class="container-fluid">
+<p >
+
+</p>
+</main>
 </body>
 </html>

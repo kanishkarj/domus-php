@@ -66,8 +66,8 @@ $conn = new mysqli($hs,$un,$pw,$db);
      $sql = "INSERT INTO input (name,title,descr,email,ph_no,ppl_no,tags,date_upl,img1,img1_desc,images)
                 VALUES ('{$name}','{$title}','{$desc}','{$email}','{$ph_no}','{$ppl_no}','{$tags}','{$date}','{$to_path}','{$_POST["img_desc1"]}','{$img_list_id}')";
      echo $sql;
-     //$res = mysqli_query($conn,$sql);
-     //echo $res;
+     $res = mysqli_query($conn,$sql);
+     echo $res;
  }
 
  $conn->close();
