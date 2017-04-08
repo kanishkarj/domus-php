@@ -36,7 +36,7 @@ if($conn){
         $small = substr($desc, 0, 500);
         $desc = $small;
         echo "
-                <div class='col-lg-4'>
+                <div class='cards col-lg-4'>
                     
                     <img src='php/{$img}' alt='{$img_desc}' style='width: 100%;height: auto;'>
                     <h3>{$title}</h3>

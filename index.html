@@ -2,6 +2,8 @@
 <html>
 <head>
     <!-- loading libraries -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery.js"></script>
@@ -9,6 +11,7 @@
     <link rel="stylesheet" href="css/common.css">
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://use.fontawesome.com/4b257711cc.js"></script>
     <title>
         Project Name
     </title>
@@ -18,11 +21,14 @@
     <nav class="nav-bar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Domus</a>
+                <a class="navbar-brand" href="index.html">Domus</a>
             </div>
+            <ul class="nav navbar-nav">
+                <li class=""><a href="create.html">Create</a></li>
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="create.html">Create</a></li>
-                <li>
+                <li class="">
                     <a onClick="a_onClick()" href="#">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
@@ -31,7 +37,7 @@
         </div>
     </nav>
 </header>
-<div id="search">
+<div id="search" >
     <form role="search">
         <div class="input-group">
             <input style="border-radius: 0px;" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -43,10 +49,18 @@
         </div>
     </form>
 </div>
+<section id="title-cont" class="col-lg-12">
+    <h1>Projects</h1>
+    <h3>All projects, all in one place. </h3>
+</section>
 <main id="container" class="container-fluid">
 <p >
 
 </p>
 </main>
+<footer class="col-lg-12">
+    <h4>Domus</h4>
+    <a><i class="fa fa-github" aria-hidden="true"></i></a>
+</footer>
 </body>
 </html>
