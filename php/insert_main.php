@@ -36,17 +36,24 @@ if($conn){
         $small = substr($desc, 0, 500);
         $desc = $small;
         echo "
-                <div class='cards col-lg-4'>
+                <div class='col-lg-4' style='padding-left: 0.3em;padding-right: 0.3em;padding-top: 1em' xmlns=\"http://www.w3.org/1999/html\">
+                <div class='cards'>
+                    <div>
+                    <div id='img-cont'>
+                        <img src='php/{$img}' alt='{$img_desc}'>
+                    </div>
                     
-                    <img src='php/{$img}' alt='{$img_desc}' style='width: 100%;height: auto;'>
                     <h3>{$title}</h3>
-                    <h4>{$name}</h4>
+                    <h4>- {$name}</h4>
                     <h5>{$date}</h5>
-                    <p>
+                    <p style='word-wrap: normal;height: auto;'>
                         {$desc}
                     
                     </p>
+                    </div>
                     <a href='php/project.php?project={$p_id}'>read more...</a>
+                
+                </div>
                 </div>
         ";
     }

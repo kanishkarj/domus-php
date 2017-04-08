@@ -13,6 +13,7 @@ $ppl_no = $_POST['ppl_no'];
 $tags = $_POST['tags'];
 $date = date("Y/m/d");
 $title = $_POST['title'];
+$week_no = $_POST['week_no'];
 
 $hs = "localhost";
 $un = "guest";
@@ -44,11 +45,11 @@ $conn = new mysqli($hs,$un,$pw,$db);
          }
      }
      copy($from_path,$to_path);
+
      for($i = 2; $_FILES['img' . $i]['tmp_name'] ;$i++){
          echo "HEllo <br>";
          $nfrom_path = $_FILES['img' . $i]['tmp_name'];
          $nto_path =  "images/" . $_FILES['img' . $i]['name'];
-         move_uploaded_file($nfrom_path,$nto_path);
          while (1){
              if(file_exists($nto_path)){
                  $nto_path =  "images/" . mt_rand(0,600000) . $_FILES['img' . $i]['name'];
@@ -57,14 +58,15 @@ $conn = new mysqli($hs,$un,$pw,$db);
                  break;
              }
          }
+         move_uploaded_file($nfrom_path,$nto_path);
          $sql = "INSERT INTO images (img_id,path,descr)
                 VALUES ('{$img_list_id}','{$nto_path}','{$_POST['img_desc'. $i]}')";
          echo $sql;
          $res = mysqli_query($conn,$sql);
          echo $res;
      }
-     $sql = "INSERT INTO input (name,title,descr,email,ph_no,ppl_no,tags,date_upl,img1,img1_desc,images)
-                VALUES ('{$name}','{$title}','{$desc}','{$email}','{$ph_no}','{$ppl_no}','{$tags}','{$date}','{$to_path}','{$_POST["img_desc1"]}','{$img_list_id}')";
+     $sql = "INSERT INTO input (name,title,descr,email,ph_no,ppl_no,week_no,tags,date_upl,img1,img1_desc,images)
+                VALUES ('{$name}','{$title}','{$desc}','{$email}','{$ph_no}','{$ppl_no}','{$week_no}','{$tags}','{$date}','{$to_path}','{$_POST["img_desc1"]}','{$img_list_id}')";
      echo $sql;
      $res = mysqli_query($conn,$sql);
      echo $res;

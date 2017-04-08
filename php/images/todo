@@ -1,0 +1,28 @@
+nav bar
+	search
+		search through titles, tags
+		make a relevance function
+	create
+	name of website
+Home Page
+	
+
+Form 
+	Name of the uploader
+	Title  of the project
+	What is the project about ?
+	Images 
+		Minimum one
+		Descriptions of all images
+		
+	contact info
+		email id : needed
+			verify validity
+		phone no.
+			"
+	how many people would work on this project
+	tags
+	Date uploaded 
+		dont' take it from the user , used for sorting
+	 
+		
