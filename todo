@@ -21,8 +21,14 @@ Form
 		phone no.
 			"
 	how many people would work on this project
+	how long will u recruit
 	tags
 	Date uploaded 
 		dont' take it from the user , used for sorting
-	 
+
+form changes
+    make img compulsary\
+    make the site responsive
+    description dynamic
+    inform which is the prime image
 		
