@@ -5,6 +5,8 @@
  * Date: 9/4/17
  * Time: 5:10 AM
  */
+
+// converts upload date and week no. to no. of days weeks left
 function dateToWeek($datein,$week_no){
     $timestamp = strtotime($datein . ' + '.$week_no.' weeks ');
     $date = date("Y/m/d",$timestamp);
@@ -13,6 +15,7 @@ function dateToWeek($datein,$week_no){
     return floor($diff/7) . ' weeks ' . ($diff%7) . ' days.';
 }
 
+// uploads data into the table
 function uploadData(){
     $name = $_POST['name'];
     $ph_no = $_POST['ph_no'];
@@ -24,14 +27,14 @@ function uploadData(){
     $title = $_POST['title'];
     $week_no = $_POST['week_no'];
 
-    $hs = "localhost";
-    $un = "guest";
-    $pw = "domus";
-    $db = "project";
+    $hs = "localhost"; // the host
+    $un = "guest"; // username
+    $pw = "domus"; //password
+    $db = "project"; //name of the database
 
     $conn = new mysqli($hs,$un,$pw,$db);
 
-    $p_id = mt_rand(0,600000);
+    $p_id = mt_rand(0,600000); // generates random project id
 
     if($conn){
 
@@ -39,6 +42,7 @@ function uploadData(){
         $to_path =  "images/" . $_FILES['img1']['name'];
         $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
 
+        //checks if the project id exists, if it does loop till the new one doesnt exist
         while(1){
             $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
             if($res->num_rows > 0){
@@ -47,6 +51,8 @@ function uploadData(){
             else
                 break;
         }
+
+        // checks if the save location of the files already exists, if it does loop till the new one doesnt exist
         while (1){
             if(file_exists($to_path)){
                 $to_path =  "images/" . mt_rand(0,600000) . $_FILES['img1']['name'];
@@ -56,6 +62,8 @@ function uploadData(){
             }
         }
         $img_list_id = mt_rand(0,6000)."%#$".mt_rand(0,600000);
+
+        // checks if the image list id exists, if it does loop till the new one doesnt exist
         while(1) {
             $res = mysqli_query($conn, "SELECT FROM images WHERE img_id = {$img_list_id}");
             if($res){
@@ -64,8 +72,12 @@ function uploadData(){
                 break;
             }
         }
+
+        //copies the image to the local directory
         copy($from_path,$to_path);
+
         $i = 0;
+        ///adds the images to the image list
         foreach($_FILES as $file){
             $i++;
             if($i==1)
@@ -93,7 +105,7 @@ function uploadData(){
     $conn->close();
     echo '<script type="text/javascript">
         alert("The project as been added successfully ! ");
-        window.open("project.php?project='.$p_id.'","_self");
+        window.open("project.php?project='.$p_id.'","_self"); //redirects the user to the new project page
     </script>'
     ;
 }

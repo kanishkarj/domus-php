@@ -2,9 +2,7 @@
     border-radius: 0px;
 
 }
-#form-create{
 
-}
 #title-bar{
     font-family: 'Oswald', sans-serif !important;
     text-align: center;
@@ -17,5 +15,5 @@
 }
 form{
     width: 80%;
-    margin: auto;
+    margin: auto; /*this centre alligns the content*/
 }

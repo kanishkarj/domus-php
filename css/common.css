@@ -1,6 +1,8 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
+
+
 .nav-bar{
     -webkit-box-shadow: 0em 0.1em 1em lightgrey;
     -moz-box-shadow: 0em 0.1em 1em lightgrey;
@@ -11,6 +13,8 @@ body{
 h4{
     color: lightslategray;
 }
+
+/*The below navbar styles are to avoid the collapse of the navbar as the screen width reduces..*/
 .navbar-light{
 
     border-radius: 0px;
@@ -27,6 +31,8 @@ h4{
 .navbar-nav.navbar-right:last-child{
     margin-right: -15px !important;
 }
+
+
 .nav-bar  a{
     color: steelblue !important;
 }
@@ -57,12 +63,13 @@ h4{
 }
 #search{
     width: 100%;
-    filter: alpha(opacity=0);
+    filter: alpha(opacity=0); /*gives the background of the search bar transparency*/
     display: none;
     float: left;
     margin: auto;
     position:absolute;
     margin-top: 0.5em !important;
+    /*disables the shadows*/
     -webkit-box-shadow: 0em 0em 0em ;
     -moz-box-shadow: 0em 0em 0em ;
     box-shadow: 0em 0em 0em ;
@@ -73,11 +80,11 @@ h4{
 }
 #search .btn-default{
     border-radius: 0px;
-    border-radius: 0em 1em 1em 0em;
+    border-radius: 0em 1em 1em 0em; /*gives rounded corners of the search bar*/
 }
 
 #srch-term{
-    border-radius: 1em 0em 0em 1em;
+    border-radius: 1em 0em 0em 1em;/*gives rounded corners of the search bar*/
 }
 
 #title-cont{

@@ -9,10 +9,10 @@ include ('functions.php');
 
 $img;$title;$desc;$date;$name;$img_desc;$img_table;
 
-$conn = new mysqli($hs,$un,$pw,$db);
+$conn = new mysqli($hs,$un,$pw,$db);//initiates the database connection
 $query = "SELECT * FROM `input` WHERE p_id={$id}";
-$res = mysqli_query($conn,$query);
-
+$res = mysqli_query($conn,$query);//query's the database for one particular project
+//checks if the connection has been established
 if($conn){
 
 foreach ($res as $row){
@@ -42,7 +42,7 @@ $tags = $row['tags'];
 <?php
 $imgp = $row['img1'];
 echo '
-<header style="background-image:url('.$imgp.')">
+<header style="background-image:url('.$imgp.')">  <!--sets the background image for the header -->
     <nav class="nav-bar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -74,21 +74,22 @@ echo '
     </form>
 </div>
 </header>
-<figcaption>'.$row['img1_desc'].'</figcaption>
+<figcaption>'.$row['img1_desc'].'</figcaption> 
+<hr>
 ';
 ?>
 
 <main>
 <?php
-$tags = explode(" ", $row['tags']);
-$paras = explode("\n", $row['descr']);
+    $tags = explode(" ", $row['tags']); //splits the tags into seperate tags
+    $paras = explode("\n", $row['descr']);//splits description into different paragraphs
 echo "
 <section id='title-cont'>
-<h1>{$row['title']}</h1>
-<h4>- {$row['name']}</h4>
+    <h1>{$row['title']}</h1>
+    <h4>- {$row['name']}</h4>
 </section>
 <br>
-<section id='tag-cont' class='container-fluid'>
+    <section id='tag-cont' class='container-fluid'>
 <ul>
 ";
 foreach ($tags as $tag){
@@ -111,17 +112,17 @@ echo"
 <article id='footer-cont'>
 <blockquote>
 <h1>
-{$weekop}
+    {$weekop}
 </h1>
 <h2>{$row['ppl_no']} people required</h2>
 </blockquote>
 </article>
 <br>
-<h4>Contact :</h4>
+    <h4>Contact :</h4>
 <br>
 <blockquote>
-<a href='mailto:{$row['email']}'><h3>{$row['email']}</h3></a>
-<h2>{$row['ph_no']}</h2>
+    <a href='mailto:{$row['email']}'><h3>{$row['email']}</h3></a> 
+    <h2>{$row['ph_no']}</h2>
 </blockquote>
 <div>
 ";
@@ -132,9 +133,10 @@ echo"
     <ul  class="col-lg-12">
         <?php
         $img_table = $row['images'];
-        $query = "SELECT * FROM `images` WHERE img_id='{$img_table}'";
+        $query = "SELECT * FROM `images` WHERE img_id='{$img_table}'"; //collects all the images with the same images id as the current project
         $res = mysqli_query($conn,$query);
         if($conn){
+            //the following loop prints out image enclosed in a figure tag
             foreach ($res as $row) {
                 echo "
         <li class='col-lg-4 fig-cont col-sm-12'>
