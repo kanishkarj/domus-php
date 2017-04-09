@@ -36,7 +36,7 @@ if($conn){
         $small = substr($desc, 0, 500);
         $desc = $small;
         echo "
-                <div class='col-lg-4' style='padding-left: 0.3em;padding-right: 0.3em;padding-top: 1em' xmlns=\"http://www.w3.org/1999/html\">
+                <div class='col-lg-4 col-sm-12' style='padding-left: 0.3em;padding-right: 0.3em;padding-top: 1em' xmlns=\"http://www.w3.org/1999/html\">
                 <div class='cards'>
                     <div>
                     <div id='img-cont'>
@@ -45,7 +45,6 @@ if($conn){
                     
                     <h3>{$title}</h3>
                     <h4>- {$name}</h4>
-                    <h5>{$date}</h5>
                     <p style='word-wrap: normal;height: auto;'>
                         {$desc}
                     

@@ -5,6 +5,8 @@ $un = "guest";
 $pw = "domus";
 $db = "project";
 
+include ('functions.php');
+
 $img;$title;$desc;$date;$name;$img_desc;$img_table;
 
 $conn = new mysqli($hs,$un,$pw,$db);
@@ -28,6 +30,7 @@ $tags = $row['tags'];
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/project.css">
     <script src="../js/common.js"></script>
     <script src="../js/index.js"></script>
     <script src="https://use.fontawesome.com/4b257711cc.js"></script>
@@ -36,14 +39,17 @@ $tags = $row['tags'];
     </title>
 </head>
 <body>
-<header>
+<?php
+$imgp = $row['img1'];
+echo '
+<header style="background-image:url('.$imgp.')">
     <nav class="nav-bar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Domus</a>
+                <a class="navbar-brand" href="../index.html">Domus</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class=""><a href="create.html">Create</a></li>
+                <li class=""><a href="create.php">Create</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -56,6 +62,9 @@ $tags = $row['tags'];
         </div>
     </nav>
 </header>
+<h6>'.$row['img1_desc'].'</h6>
+';
+?>
 <div id="search" >
     <form role="search">
         <div class="input-group">
@@ -70,48 +79,73 @@ $tags = $row['tags'];
 </div>
 <main>
 <?php
+$tags = explode(" ", $row['tags']);
+$paras = explode("\n", $row['descr']);
 echo "
+<section id='title-cont'>
 <h1>{$row['title']}</h1>
 <h4>- {$row['name']}</h4>
-<h5>{$row['date_upl']}</h5>
+</section>
 <br>
-<h4>Tags : {$tags}</h4>
+";
+foreach ($tags as $tag){
+    echo "<strong>{$tag}</strong>";
+}
+echo"
 <br>
-<figure>
-    <img src='{$row['img1']}' style='width: 100%; height:auto; '>
-    <figcaption>{$row['img1_desc']}</figcaption>      
-</figure>
-<p>
-{$row['descr']}
-</p>
 <br>
-<h4>Time left  : </h4>
-<h4>Total no. of recruitments required : {$row['ppl_no']}</h4>
+
+";
+foreach ($paras as $para){
+    echo "<p>{$para}</p>";
+}
+$weekop =dateToWeek($row['date_upl'],$row['week_no']);
+echo"
+
 <br>
-<h4>Contact</h4>
-<h5>Email id : {$row['email']}</h5>
-<h5>Phone no. : {$row['ph_no']}</h5>
-<section>
+<article id='footer-cont'>
+<blockquote>
+<h1>
+{$weekop}
+</h1>
+<h2>{$row['ppl_no']} people required</h2>
+</blockquote>
+</article>
+<br>
+<h4>Contact :</h4>
+<br>
+<blockquote>
+<h3>{$row['email']}</h3>
+<h2>{$row['ph_no']}</h2>
+</blockquote>
+<div>
 ";
 }}
-?>
-<?php
-$query = "SELECT * FROM `images` WHERE img_id='{$img_table}'";
-$res = mysqli_query($conn,$query);
-if($conn){
-
-foreach ($res as $row) {
-    echo "
-        <figure class='col-lg-4'>
-            <img src='{$row['path']}' style='width: 100%; height:auto; '>
-            <figcaption>{$row['descr']}</figcaption>      
-        </figure>
-    ";
-}}
-
-?>
-    </section>
+?></div>
 </main>
+<section class="col-lg-12">
+    <ul  class="col-lg-12">
+        <?php
+        $img_table = $row['images'];
+        $query = "SELECT * FROM `images` WHERE img_id='{$img_table}'";
+        $res = mysqli_query($conn,$query);
+        if($conn){
+            foreach ($res as $row) {
+                echo "
+        <li class='col-lg-4 fig-cont col-sm-12'>
+        <div>
+        <figure class='figure'>
+            <img src='{$row['path']}' class='figure-img' style='width: 100%; height:auto; '>
+            <figcaption class='figure-caption text-right'>{$row['descr']}</figcaption>      
+        </figure>
+        </div>
+        </li>
+    ";
+            }}
+
+        ?>
+    </ul>
+</section>
 <footer class="col-lg-12">
     <h4>Domus</h4>
     <a><i class="fa fa-github" aria-hidden="true"></i></a>

@@ -4,6 +4,9 @@
     box-shadow: 0em 0.1em 1em lightgrey;
     border-radius: 0px !important;
 }
+h4{
+    color: lightslategray;
+}
 .navbar-light{
 
     border-radius: 0px;
