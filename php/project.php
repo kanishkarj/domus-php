@@ -61,22 +61,23 @@ echo '
             </ul>
         </div>
     </nav>
-</header>
-<h6>'.$row['img1_desc'].'</h6>
-';
-?>
-<div id="search" >
-    <form role="search">
+    <div id="search" >
+    <form id="search-form"  role="search">
         <div class="input-group">
-            <input style="border-radius: 0px;" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
+                <button class="btn btn-default" onclick="srch_onClick()">
                     <i class="glyphicon glyphicon-search"></i>
                 </button>
             </div>
         </div>
     </form>
 </div>
+</header>
+<figcaption>'.$row['img1_desc'].'</figcaption>
+';
+?>
+
 <main>
 <?php
 $tags = explode(" ", $row['tags']);
@@ -87,11 +88,15 @@ echo "
 <h4>- {$row['name']}</h4>
 </section>
 <br>
+<section id='tag-cont' class='container-fluid'>
+<ul>
 ";
 foreach ($tags as $tag){
-    echo "<strong>{$tag}</strong>";
+    echo "<li><strong>{$tag}</strong></li>";
 }
 echo"
+</ul>
+</section>
 <br>
 <br>
 
@@ -115,7 +120,7 @@ echo"
 <h4>Contact :</h4>
 <br>
 <blockquote>
-<h3>{$row['email']}</h3>
+<a href='mailto:{$row['email']}'><h3>{$row['email']}</h3></a>
 <h2>{$row['ph_no']}</h2>
 </blockquote>
 <div>
@@ -148,7 +153,7 @@ echo"
 </section>
 <footer class="col-lg-12">
     <h4>Domus</h4>
-    <a><i class="fa fa-github" aria-hidden="true"></i></a>
+    <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
 </footer>
 </body>
 </html>

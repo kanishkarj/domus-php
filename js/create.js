@@ -10,11 +10,5 @@ function submit_click() {
     
 }
 $(Document).ready(function () {
-    console.log("data");
-    /*$('#form-create').submit(function (event) {
-        event.preventDefault();
-        var form = $(this);
-        var data=  form.serialize();
-        console.log(data);
-    });*/
+
 });

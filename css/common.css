@@ -1,8 +1,12 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
 .nav-bar{
     -webkit-box-shadow: 0em 0.1em 1em lightgrey;
     -moz-box-shadow: 0em 0.1em 1em lightgrey;
     box-shadow: 0em 0.1em 1em lightgrey;
     border-radius: 0px !important;
+
 }
 h4{
     color: lightslategray;
@@ -48,12 +52,16 @@ h4{
 .form-group{
     display: inline;
 }
+.cards h3,h4{
+    font-family: 'Oswald', sans-serif !important;
+}
 #search{
     width: 100%;
-    background-color: #F0EFEF;
+    filter: alpha(opacity=0);
     display: none;
-    float: none;
+    float: left;
     margin: auto;
+    position:absolute;
     margin-top: 0.5em !important;
     -webkit-box-shadow: 0em 0em 0em ;
     -moz-box-shadow: 0em 0em 0em ;
@@ -64,13 +72,14 @@ h4{
     margin: auto;
 }
 #search .btn-default{
-    background-color: lightgray;
-    border-color: lightgray;
     border-radius: 0px;
+    border-radius: 0em 1em 1em 0em;
 }
-#search .btn-default:hover {
-    background-color:#337ab7 !important;
+
+#srch-term{
+    border-radius: 1em 0em 0em 1em;
 }
+
 #title-cont{
     padding: 1em;
     background-color: #F0EFEF;
@@ -78,6 +87,7 @@ h4{
     -moz-box-shadow: 0em 0.1em 1em lightgrey;
     box-shadow: 0em 0.1em 1em lightgrey;
      margin-bottom: 2em;
+
 }
 .cards{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

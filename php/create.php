@@ -51,17 +51,17 @@ if (!empty($_POST))
     </nav>
 </header>
     <div id="search" >
-    <form role="search">
-        <div class="input-group">
-            <input style="border-radius: 0px;" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
+        <form id="search-form"  role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" onclick="srch_onClick()">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
     <div id="title-bar">
         <h1>Create a new project</h1>
     </div>
@@ -89,7 +89,7 @@ if (!empty($_POST))
 
         <fieldset>
             <legend>Images </legend>
-            <a onClick="add_img()" href="#">
+            <a onClick="add_img()">
                 <span class="glyphicon glyphicon-plus-sign" style="font-size: 2em;"></span>
             </a>
             <br><br>
@@ -155,7 +155,7 @@ if (!empty($_POST))
 </form>
     <footer class="col-lg-12">
         <h4>Domus</h4>
-        <a><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
     </footer>
 </body>
 </html>

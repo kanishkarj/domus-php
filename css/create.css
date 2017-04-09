@@ -6,12 +6,14 @@
 
 }
 #title-bar{
+    font-family: 'Oswald', sans-serif !important;
     text-align: center;
     padding: 1em;
     margin-top: 2em;
     margin-bottom: 2em;
     background-color: #F0EFEF ;
     color: steelblue;
+
 }
 form{
     width: 80%;

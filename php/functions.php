@@ -65,13 +65,16 @@ function uploadData(){
             }
         }
         copy($from_path,$to_path);
-
-        for($i = 2; $_FILES['img' . $i]['tmp_name'] ;$i++){
-            $nfrom_path = $_FILES['img' . $i]['tmp_name'];
-            $nto_path =  "images/". $_FILES['img' . $i]['name'];
+        $i = 0;
+        foreach($_FILES as $file){
+            $i++;
+            if($i==1)
+                continue;
+            $nfrom_path = $file['tmp_name'];
+            $nto_path =  "images/". $file['name'];
             while (1){
                 if(file_exists($nto_path)){
-                    $nto_path =  "images/" . mt_rand(0,600000) . $_FILES['img' . $i]['name'];
+                    $nto_path =  "images/" . mt_rand(0,600000) . $file['name'];
                 }
                 else{
                     break;

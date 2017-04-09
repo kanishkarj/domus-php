@@ -11,6 +11,7 @@
         background-attachment: fixed;
         background-position:top;
     }
+
 }
 @media only screen and (max-width: 700px) {
     main{
@@ -26,11 +27,29 @@
         background-attachment: fixed;
         background-position:top;
     }
+    h1{
+        font-size: 2em;
+    }
+}
+main{
+    margin-top: 1em;
+}
+#tag-cont{
+    width: 100%;
+}
+#tag-cont ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+#tag-cont ul li {
+    float: left;
+    margin-bottom: 2em;
 }
 
 h6{
-    text-align: center;
-     width: 100%;
+
 }
 #title-cont{
     text-align: center;
@@ -46,6 +65,7 @@ strong{
     margin: 0.5em;
 
 }
+
 figure{
     padding: 0.5em;
     -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
@@ -53,7 +73,13 @@ figure{
     box-shadow: 0.1em 0.1em 1em lightgrey;
 }
 figure figcaption{
-    margin: 0.5em;
+    margin: 1em;
+
+}
+figcaption{
+    color: lightslategray !important;
+    text-align: center;
+    margin: 1em;
 }
 .fig-cont{
     padding: 0.5em;

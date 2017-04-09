@@ -9,8 +9,8 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
-    <script src="js/common.js"></script>
-    <script src="js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
     <script src="https://use.fontawesome.com/4b257711cc.js"></script>
     <title>
         Domus
@@ -28,7 +28,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="">
+                <li class="" id="search-item">
                     <a onClick="a_onClick()" href="#">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
@@ -38,11 +38,11 @@
     </nav>
 </header>
 <div id="search" >
-    <form role="search">
+    <form id="search-form" role="search">
         <div class="input-group">
-            <input style="border-radius: 0px;" type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
+                <button class="btn btn-default" id="srch-btn" onclick="search_onClick()">
                     <i class="glyphicon glyphicon-search"></i>
                 </button>
             </div>
@@ -60,7 +60,9 @@
 </main>
 <footer class="col-lg-12">
     <h4>Domus</h4>
-    <a><i class="fa fa-github" aria-hidden="true"></i></a>
+    <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
 </footer>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
