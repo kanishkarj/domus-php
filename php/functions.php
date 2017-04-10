@@ -5,7 +5,8 @@
  * Date: 9/4/17
  * Time: 5:10 AM
  */
-
+// every time  this is run > $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
+// replace the above script to server end processing to reduce latency 
 // converts upload date and week no. to no. of days weeks left
 function dateToWeek($datein,$week_no){
     $timestamp = strtotime($datein . ' + '.$week_no.' weeks ');
@@ -53,6 +54,7 @@ function uploadData(){
         }
 
         // checks if the save location of the files already exists, if it does loop till the new one doesnt exist
+        
         while (1){
             if(file_exists($to_path)){
                 $to_path =  "images/" . mt_rand(0,600000) . $_FILES['img1']['name'];
