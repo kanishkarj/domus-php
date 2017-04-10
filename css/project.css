@@ -18,6 +18,9 @@ else 80%.
     #img-cont{
         width: 80%;
     }
+    #footer-cont{
+        height: 30em;
+    }
 }
 @media only screen and (max-width: 700px) {
     main{
@@ -39,6 +42,7 @@ else 80%.
     #img-cont{
         width: 100%;
     }
+
 }
 main{
     margin-top: 1em;
@@ -105,18 +109,21 @@ figcaption{
 ul{
     list-style: none;
 }
+
+blockquote{
+    border-left: 10px solid steelblue;
+}
 #footer-cont{
     background-color: #F2F2F2;
     padding:1em;
-    white-space: normal;
     -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
     -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
     box-shadow: 0.1em 0.1em 1em lightgrey;
     border-radius: 0.5em;
     margin-bottom: 2em;
 }
-blockquote{
-    border-left: 10px solid steelblue;
+.footer-cont{
+    background-color: lightgrey;
 }
 #footer-section{
     height: auto;

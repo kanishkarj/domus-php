@@ -48,6 +48,7 @@ $imgp = $row['img1'];
 echo '
 <header style="background-image:url('.$imgp.')">  <!--sets the background image for the header -->
     <nav class="nav-bar navbar-default">
+        <nav class="nav-bar navbar-light">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="../index.html">Domus</a>
@@ -66,17 +67,17 @@ echo '
         </div>
     </nav>
     <div id="search" >
-    <form id="search-form"  role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-                <button class="btn btn-default" onclick="srch_onClick()">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
+        <form id="search-form"  role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" id="srch-btn" onclick="srch_onClick()">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 </header>
 <figcaption>'.$row['img1_desc'].'</figcaption> 
 <hr>
@@ -148,33 +149,33 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
 echo"
 
 <br>
-<div id='footer-cont'>
-    <div class='col-lg-6 col-sm-12'>
-    <h6>Email<br></h6>
+
+<article class='footer-cont'>
+<blockquote class='col-lg-6 col-sm-12'>
+ <h6>Email<br></h6>
     <h4>
         <a href='mailto:{$email}'>{$email}</a> 
     </h4>
-    </div>
-    <div id='recruit-cont' class='col-lg-6 col-sm-12'>
-        <h6>phone no.</h6> 
+</blockquote>
+<blockquote class='col-lg-6 col-sm-12'>
+  <h6>phone no.</h6> 
     <h4>
     {$ph_no}
     </h4>
-    </div>
-    <br>
-    <div class='col-lg-6 col-sm-12'>
-    <h6>Recruiting till<br></h6>
+</blockquote>
+<blockquote class='col-lg-6 col-sm-12'>
+ <h6>Recruiting till<br></h6>
     <h4>
         {$weekop}
     </h4>
-    </div>
-    <div id='recruit-cont' class='col-lg-6 col-sm-12'>
-        <h6>Total recruits</h6> 
+</blockquote>
+<blockquote class='col-lg-6 col-sm-12'>
+<h6>Total recruits</h6> 
         <h4>
             {$ppl_no} people
         </h4>
-    </div>
-</div>
+</blockquote>
+</article>
 <div>
 ";
 }}

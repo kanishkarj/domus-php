@@ -2,7 +2,13 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-
+nav{
+    -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -webkit-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -o-transition:  height 1s ease-in-out,  bottom 1.5s ease-in-out;
+    transition:  height 1s ease-in-out,  bottom 1.5s ease-in-out;
+}
 .nav-bar{
     -webkit-box-shadow: 0em 0em 0em lightgrey;
     -moz-box-shadow: 0em 0em 0em  lightgrey;
@@ -69,11 +75,11 @@ h4{
 
 
 #srch-term{
-    border-radius: 0em 0em 0em 0em;/*gives rounded corners of the search bar*/
-    float: right;
-
+    border-radius: 1em 0em 0em 1em;/*gives rounded corners of the search bar*/
 }
-
+#srch-btn{
+    border-radius: 0em 1em 1em 0em;/*gives rounded corners of the search bar*/
+}
 #title-cont{
     padding: 1em;
     background-color: #F0EFEF;
@@ -121,9 +127,9 @@ h4{
 }
 footer{
     margin-top: 1em;
-    -webkit-box-shadow: 0 0px 8px 9px  lightgrey;
-    -moz-box-shadow: 0 0px 8px 9px  lightgrey;
-    box-shadow: 0 0px 8px 9px  lightgrey;
+    -webkit-box-shadow: 0 0px 4px 4.5px  lightgrey;
+    -moz-box-shadow: 0 0px 4px 4.5px  lightgrey;
+    box-shadow: 0 0px 4px 4.5px  lightgrey;
     background-color: #F0EFEF;
     display: block;
 }
@@ -139,14 +145,12 @@ footer h4{
 #search-btn{
     padding-left: 1em;
 }
-#search-inp{
-    border-radius: 0px;
-    -webkit-box-shadow: 0 0px 0px 0px  lightgrey;
-    -moz-box-shadow: 0 0px 0px 0px  lightgrey;
-    box-shadow: 0 0px 0px 0px  lightgrey;
-}
+
 #search{
-    width: 100em;
+    width: 80%;
+    display: none;
+    margin: auto;
+    margin-bottom: 1em;
 }
 
 .scroll-top-wrapper {

@@ -34,37 +34,37 @@ if (!empty($_POST))
 </head>
 <body>
     <header>
-    <nav class="nav-bar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="../index.html">Domus</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Create</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a onClick="a_onClick()" href="#">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-    <div id="search" >
-        <form id="search-form"  role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" onclick="srch_onClick()">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
+        <nav class="nav-bar navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../index.html">Domus</a>
                 </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="create.php">Create</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a onClick="a_onClick()" href="#">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </form>
-    </div>
+        </nav>
+        <div id="search" >
+            <form id="search-form"  role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="srch-btn" onclick="srch_onClick()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+</header>
     <div id="title-bar">
         <h1>Create a new project</h1>
     </div>
