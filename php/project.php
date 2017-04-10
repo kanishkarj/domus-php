@@ -132,7 +132,9 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
         <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
     </div>
     <br>
+
     <section id='tag-cont' class='container-fluid'>
+        <h6>Tags : </h6>
         <ul>
             <?php
             foreach ($tags as $tag){
@@ -147,21 +149,35 @@ echo"
 
 <br>
 <article id='footer-cont'>
-<h4>Project details :</h4>
-<blockquote>
-<h1>
-    {$weekop}
-</h1>
-<h2>{$ppl_no} people required</h2>
-</blockquote>
+<section id='footer-section'>
+    <div class='col-lg-6 col-sm-12'>
+    <h6>Email<br></h6>
+    <h4>
+        <a href='mailto:{$email}'>{$email}</a> 
+    </h4>
+    </div>
+    <div id='recruit-cont' class='col-lg-6 col-sm-12'>
+        <h6>phone no.</h6> 
+    <h4>
+    {$ph_no}
+    </h4>
+    </div>
+    <br>
+    <div class='col-lg-6 col-sm-12'>
+    <h6>Recruiting till<br></h6>
+    <h4>
+        {$weekop}
+    </h4>
+    </div>
+<div id='recruit-cont' class='col-lg-6 col-sm-12'>
+<h6>Total recruits</h6> 
+<h4>
+{$ppl_no} people
+</h4>
+</div>
 
-<br>
-    <h4>Contact :</h4>
-<br>
-<blockquote>
-    <a href='mailto:{$email}'><h3>{$email}</h3></a> 
-    <h2>{$ph_no}</h2>
-</blockquote>
+    
+</section>
 </article>
 <div>
 ";

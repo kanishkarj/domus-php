@@ -45,6 +45,7 @@ main{
 }
 #tag-cont{
     width: 100%;
+    display: inline-block;
 }
 #tag-cont ul{
     list-style-type: none;
@@ -107,6 +108,7 @@ ul{
 #footer-cont{
     background-color: #F2F2F2;
     padding:1em;
+    height: auto;
     -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
     -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
     box-shadow: 0.1em 0.1em 1em lightgrey;
@@ -116,5 +118,7 @@ ul{
 blockquote{
     border-left: 10px solid steelblue;
 }
-
+#footer-section{
+    height: auto;
+}
 

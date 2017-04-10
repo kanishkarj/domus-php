@@ -21,7 +21,7 @@ $(document).ready(function(){
         offset = element.offset();
         offsetTop = offset.top;
         $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-        $('.scroll-top-wrapper').css('background-color','steelblue');
+        //$('.scroll-top-wrapper i ').css('background-color','steelblue');
     }
 
 });

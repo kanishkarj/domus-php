@@ -44,14 +44,15 @@ if($conn){
                     <div id='img-cont'>
                         <img src='php/{$img}' alt='{$img_desc}'>
                     </div>
-                    
+                    <article id='text-cont'>
                     <h3>{$title}</h3>
                     <p style='word-wrap: normal;height: auto;'>
                         {$desc}
-                    
+                
                     </p>
+                    </article>
                     </div>
-                    <a>read more...</a>
+                 
                     </a>
                 </div>
                 </div>

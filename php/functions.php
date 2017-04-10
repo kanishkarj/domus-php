@@ -13,7 +13,7 @@ function dateToWeek($datein,$week_no){
     $date = date("Y/m/d",$timestamp);
     $curr = time();
     $diff = floor(($timestamp - $curr)/(60*60*24)) + 1;
-    return floor($diff/7) . ' weeks ' . ($diff%7) . ' days.';
+    return floor($diff/7) . ' weeks ' . ($diff%7) . ' days';
 }
 
 // uploads data into the table
