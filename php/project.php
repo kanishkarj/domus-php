@@ -18,6 +18,9 @@ if($conn){
 foreach ($res as $row){
 $img_table = $row['images'];
 $tags = $row['tags'];
+$ppl_no = $row['ppl_no'];
+$email = $row['email'];
+$ph_no  = $row['ph_no'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +33,7 @@ $tags = $row['tags'];
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/w3.css">
     <link rel="stylesheet" href="../css/project.css">
     <script src="../js/common.js"></script>
     <script src="../js/index.js"></script>
@@ -84,53 +88,27 @@ echo '
     $tags = explode(" ", $row['tags']); //splits the tags into seperate tags
     $paras = explode("\n", $row['descr']);//splits description into different paragraphs
 echo "
-<section id='title-cont'>
+<section id='title-container'>
     <h1>{$row['title']}</h1>
     <h4>- {$row['name']}</h4>
 </section>
 <br>
-    <section id='tag-cont' class='container-fluid'>
-<ul>
+    
 ";
-foreach ($tags as $tag){
-    echo "<li><strong>{$tag}</strong></li>";
-}
-echo"
-</ul>
-</section>
-<br>
-<br>
 
+echo"
+
+<br>
+<section id='main-cont'>
 ";
 foreach ($paras as $para){
     echo "<p>{$para}</p>";
 }
 $weekop =dateToWeek($row['date_upl'],$row['week_no']);
-echo"
+?>
 
-<br>
-<article id='footer-cont'>
-<blockquote>
-<h1>
-    {$weekop}
-</h1>
-<h2>{$row['ppl_no']} people required</h2>
-</blockquote>
-</article>
-<br>
-    <h4>Contact :</h4>
-<br>
-<blockquote>
-    <a href='mailto:{$row['email']}'><h3>{$row['email']}</h3></a> 
-    <h2>{$row['ph_no']}</h2>
-</blockquote>
-<div>
-";
-}}
-?></div>
-</main>
-<section class="col-lg-12">
-    <ul  class="col-lg-12">
+    <br>
+    <div class="w3-content w3-display-container" id="img-cont">
         <?php
         $img_table = $row['images'];
         $query = "SELECT * FROM `images` WHERE img_id='{$img_table}'"; //collects all the images with the same images id as the current project
@@ -139,23 +117,87 @@ echo"
             //the following loop prints out image enclosed in a figure tag
             foreach ($res as $row) {
                 echo "
-        <li class='col-lg-4 fig-cont col-sm-12'>
-        <div>
-        <figure class='figure'>
-            <img src='{$row['path']}' class='figure-img' style='width: 100%; height:auto; '>
-            <figcaption class='figure-caption text-right'>{$row['descr']}</figcaption>      
-        </figure>
+        <div class=\"w3-display-container mySlides\">
+           <img src=\"{$row['path']}\" style=\"width:100%\">
+            <div class=\"w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black\">
+                {$row['descr']} 
+            </div>
         </div>
-        </li>
+       
     ";
             }}
 
         ?>
-    </ul>
-</section>
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+    <br>
+    <section id='tag-cont' class='container-fluid'>
+        <ul>
+            <?php
+            foreach ($tags as $tag){
+                echo "<li><strong>{$tag}</strong></li>";
+            }
+            ?>
+        </ul>
+    </section>
+    </section>
+    <?php
+echo"
+
+<br>
+<article id='footer-cont'>
+<h4>Project details :</h4>
+<blockquote>
+<h1>
+    {$weekop}
+</h1>
+<h2>{$ppl_no} people required</h2>
+</blockquote>
+
+<br>
+    <h4>Contact :</h4>
+<br>
+<blockquote>
+    <a href='mailto:{$email}'><h3>{$email}</h3></a> 
+    <h2>{$ph_no}</h2>
+</blockquote>
+</article>
+<div>
+";
+}}
+?></div>
+    <div class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        <i class="fa fa-2x fa-arrow-circle-up"></i>
+      </span>
+    </div>
+</main>
+
+
 <footer class="col-lg-12">
     <h4>Domus</h4>
     <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
 </footer>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
 </body>
 </html>

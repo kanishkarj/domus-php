@@ -115,6 +115,7 @@ if (!empty($_POST))
 
         </fieldset>
         <hr>
+        <br>
 
         <fieldset>
             <legend>Contact </legend>
@@ -156,6 +157,11 @@ if (!empty($_POST))
             </div>
         </div>
 </form>
+    <div class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        <i class="fa fa-2x fa-arrow-circle-up"></i>
+      </span>
+    </div>
     <footer class="col-lg-12">
         <h4>Domus</h4>
         <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>

@@ -15,7 +15,9 @@ else 80%.
         background-attachment: fixed;
         background-position:top;
     }
-
+    #img-cont{
+        width: 80%;
+    }
 }
 @media only screen and (max-width: 700px) {
     main{
@@ -34,6 +36,9 @@ else 80%.
     h1{
         font-size: 2em;
     }
+    #img-cont{
+        width: 100%;
+    }
 }
 main{
     margin-top: 1em;
@@ -49,16 +54,24 @@ main{
 }
 #tag-cont ul li {
     float: left;
+    margin-top: 2em;
     margin-bottom: 2em;
 }
-
+#main-cont{
+    background-color: #F2F2F2;
+    padding: 1em;
+    -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
+    -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
+    box-shadow: 0.1em 0.1em 1em lightgrey;
+}
 h6{
 
 }
-#title-cont{
+#title-container{
     text-align: center;
-    border-radius: 0px!important;
+
 }
+
 strong{
     background-color: lightgrey;
     border-radius: 0.5em;
@@ -91,3 +104,17 @@ figcaption{
 ul{
     list-style: none;
 }
+#footer-cont{
+    background-color: #F2F2F2;
+    padding:1em;
+    -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
+    -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
+    box-shadow: 0.1em 0.1em 1em lightgrey;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+}
+blockquote{
+    border-left: 10px solid steelblue;
+}
+
+

@@ -17,9 +17,9 @@ Home Page
         make least time first (default)
         provide : time,  
     Cards
-        Make the whole thing  clickable
-        Remove uploaders name ,add to contact details
-        Increase spacing 
+        **Make the whole thing  clickable
+        **Remove uploaders name ,add to contact details
+        **Increase spacing
             Maintain spacing between cards for phones 
 
 
@@ -38,7 +38,10 @@ Project details page
             implement a table for the descripition and the links
     Card : project details
            
-            
+
+
+
+
 Form 
 	Name of the uploader : Enter name 
 	Title  of the project : Enter Title
