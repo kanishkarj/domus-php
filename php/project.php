@@ -148,8 +148,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
 echo"
 
 <br>
-<article id='footer-cont'>
-<section id='footer-section'>
+<div id='footer-cont'>
     <div class='col-lg-6 col-sm-12'>
     <h6>Email<br></h6>
     <h4>
@@ -169,16 +168,13 @@ echo"
         {$weekop}
     </h4>
     </div>
-<div id='recruit-cont' class='col-lg-6 col-sm-12'>
-<h6>Total recruits</h6> 
-<h4>
-{$ppl_no} people
-</h4>
+    <div id='recruit-cont' class='col-lg-6 col-sm-12'>
+        <h6>Total recruits</h6> 
+        <h4>
+            {$ppl_no} people
+        </h4>
+    </div>
 </div>
-
-    
-</section>
-</article>
 <div>
 ";
 }}

@@ -20,6 +20,9 @@ $conn = new mysqli($hs,$un,$pw,$db);//initiates the connection to the database
 $query = "SELECT * FROM `input` WHERE (tags LIKE '%{$q}%') OR (title LIKE '%{$q}%') OR (descr LIKE '%{$q}%')";
 $res = mysqli_query($conn,$query);//queries the database
 if($conn){
+    if(mysqli_num_rows($res)==0)
+        echo "<p>No results found.</p>";
+    else
     foreach ($res as $row){
         //assigns values to the variables
         foreach ($row as $key => $value) {
@@ -44,21 +47,24 @@ if($conn){
 
        //flushes information of each project into cards
         echo "
-                <div class='col-lg-4 col-sm-12' style='padding-left: 0.3em;padding-right: 0.3em;padding-top: 1em' xmlns=\"http://www.w3.org/1999/html\">
+                <div id='card-container' class='col-lg-4 col-sm-12' xmlns=\"http://www.w3.org/1999/html\">
                 <div class='cards'>
+                    
+                    <a href='php/project.php?project={$p_id}'>
                     <div>
                     <div id='img-cont'>
                         <img src='php/{$img}' alt='{$img_desc}'>
                     </div>
-                    
+                    <article id='text-cont'>
                     <h3>{$title}</h3>
-                    <h4>- {$name}</h4>
                     <p style='word-wrap: normal;height: auto;'>
                         {$desc}
-                    
+                
                     </p>
+                    </article>
                     </div>
-                    <a href='php/project.php?project={$p_id}'>read more...</a>//hyperlink's read more to the dynamic project page
+                 
+                    </a>
                 </div>
                 </div>
         ";

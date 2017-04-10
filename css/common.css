@@ -69,7 +69,9 @@ h4{
 
 
 #srch-term{
-    border-radius: 1em 0em 0em 1em;/*gives rounded corners of the search bar*/
+    border-radius: 0em 0em 0em 0em;/*gives rounded corners of the search bar*/
+    float: right;
+
 }
 
 #title-cont{
@@ -108,7 +110,15 @@ h4{
     text-decoration: none;
     color : black;
 }
-
+.navbar-form a{
+    padding-left: 1em;
+}
+.navbar-form input{
+    border-radius: 0px;
+    -webkit-box-shadow: 0em;
+    -moz-box-shadow: 0em;
+    box-shadow: 0em;
+}
 footer{
     margin-top: 1em;
     -webkit-box-shadow: 0 0px 8px 9px  lightgrey;
@@ -135,7 +145,9 @@ footer h4{
     -moz-box-shadow: 0 0px 0px 0px  lightgrey;
     box-shadow: 0 0px 0px 0px  lightgrey;
 }
-
+#search{
+    width: 100em;
+}
 
 .scroll-top-wrapper {
     position: fixed;
@@ -183,6 +195,7 @@ footer h4{
 #container{
     width: 80%;
     margin: auto;
+    min-height: 40em;
 }
 }
 @media only screen and (min-width: 700px) {
@@ -190,6 +203,13 @@ footer h4{
 
     }
 }
+.nav-bar ul li:hover{
+    border-bottom-color: steelblue;
+    border-bottom-style: bold ;
+    border-bottom-width: 3px;
+}
 p{
     color: grey !important;
 }
+
+

@@ -108,7 +108,7 @@ ul{
 #footer-cont{
     background-color: #F2F2F2;
     padding:1em;
-    height: auto;
+    white-space: normal;
     -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
     -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
     box-shadow: 0.1em 0.1em 1em lightgrey;
