@@ -46,39 +46,40 @@ $ph_no  = $row['ph_no'];
 <?php
 $imgp = $row['img1'];
 echo '
-<header style="background-image:url('.$imgp.')">  <!--sets the background image for the header -->
-    <nav class="nav-bar navbar-default">
-        <nav class="nav-bar navbar-light">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="../index.html">Domus</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class=""><a href="create.php">Create</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a onClick="a_onClick()" href="#">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="search" >
-        <form id="search-form"  role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" id="srch-btn" onclick="srch_onClick()">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
+<header >  <!--sets the background image for the header -->
+   <nav class="nav-bar navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../index.html">Domus</a>
                 </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="create.php">Create</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a onClick="a_onClick()" href="#">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </form>
-    </div>
+        </nav>
+        <div id="search" >
+            <form id="search-form"  role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="srch-btn" onclick="srch_onClick()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="bg_img" style="background-image:url('.$imgp.');height: 100% ;width: 100%"/>
 </header>
+<br><br>
 <figcaption>'.$row['img1_desc'].'</figcaption> 
 <hr>
 ';

@@ -40,7 +40,7 @@ if (!empty($_POST))
                     <a class="navbar-brand" href="../index.html">Domus</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="create.php">Create</a></li>
+                    <li class=""><a href="php/create.php">Create</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

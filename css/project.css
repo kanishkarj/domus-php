@@ -2,6 +2,12 @@
 The below media queries changes the width on the contents as per the screen width, if is a phone covers up full space
 else 80%.
 */
+#bg_img{
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:top;
+}
 @media only screen and (min-width: 700px) {
     main{
         width: 80%;
@@ -10,16 +16,10 @@ else 80%.
     header{
         height: 35em;
         width: 100%;
-        background-repeat:no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position:top;
+
     }
     #img-cont{
         width: 80%;
-    }
-    #footer-cont{
-        height: 30em;
     }
 }
 @media only screen and (max-width: 700px) {
@@ -31,10 +31,7 @@ else 80%.
     header{
         height: 25em;
         width: 100%;
-        background-repeat:no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position:top;
+
     }
     h1{
         font-size: 2em;
@@ -125,7 +122,5 @@ blockquote{
 .footer-cont{
     background-color: lightgrey;
 }
-#footer-section{
-    height: auto;
-}
+
 
