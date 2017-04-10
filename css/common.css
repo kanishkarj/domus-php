@@ -95,6 +95,9 @@ h4{
 
 
 }
+.btn{
+    border-radius: 0px;
+}
 #card-container{
     padding: 1em;
     padding-bottom: 2em;
