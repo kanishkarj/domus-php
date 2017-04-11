@@ -102,13 +102,13 @@ if (!empty($_POST))
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="img1">Select image to upload: :</label>
                         <div class="col-sm-10">
-                            <input type="file" required="required" name="img1" id="img1">
+                            <input type="file" required="required" accept="image/*" name="img1" id="img1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="desc1">Short description of image :</label>
                         <div class="col-sm-10">
-                            <input type="text" required="required" name="img_desc1" class="form-control" id="desc1" placeholder="Enter description">
+                            <input type="text" required="required" name="img_desc1" class="form-control" id="desc1" placeholder="Description">
                         </div>
                     </div>
                 </li>

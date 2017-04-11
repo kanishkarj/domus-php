@@ -17,7 +17,7 @@ $q =$_GET['q']; //gets the search query
 $img;$title;$desc;$date;$name;$img_desc;$p_id;
 
 $conn = new mysqli($hs,$un,$pw,$db);//initiates the connection to the database
-$query = "SELECT * FROM `input` WHERE (tags LIKE '%{$q}%') OR (title LIKE '%{$q}%') OR (descr LIKE '%{$q}%')";
+$query = "SELECT * FROM `input` WHERE (tags LIKE '%{$q}%') OR (title LIKE '%{$q}%') OR (name LIKE '%{$q}%') OR (descr LIKE '%{$q}%')";
 $res = mysqli_query($conn,$query);//queries the database
 if($conn){
     if(mysqli_num_rows($res)==0)
