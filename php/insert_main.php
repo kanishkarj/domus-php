@@ -10,10 +10,12 @@ $un = "guest";
 $pw = "domus";
 $db = "project";
 
+
+
 $img;$title;$desc;$date;$name;$img_desc;$p_id;
 
 $conn = new mysqli($hs,$un,$pw,$db);
-$query = "SELECT * FROM `input`";
+$query = "SELECT * FROM `input` ORDER BY date_upl DESC " ;
 $res = mysqli_query($conn,$query);
 if($conn){
     foreach ($res as $row){

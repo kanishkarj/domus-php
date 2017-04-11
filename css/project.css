@@ -2,6 +2,12 @@
 The below media queries changes the width on the contents as per the screen width, if is a phone covers up full space
 else 80%.
 */
+#bg_img{
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:top;
+}
 @media only screen and (min-width: 700px) {
     main{
         width: 80%;
@@ -10,10 +16,7 @@ else 80%.
     header{
         height: 35em;
         width: 100%;
-        background-repeat:no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position:top;
+
     }
     #img-cont{
         width: 80%;
@@ -28,10 +31,7 @@ else 80%.
     header{
         height: 25em;
         width: 100%;
-        background-repeat:no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position:top;
+
     }
     h1{
         font-size: 2em;
@@ -39,6 +39,7 @@ else 80%.
     #img-cont{
         width: 100%;
     }
+
 }
 main{
     margin-top: 1em;
@@ -105,20 +106,21 @@ figcaption{
 ul{
     list-style: none;
 }
+
+blockquote{
+    border-left: 10px solid steelblue;
+}
 #footer-cont{
     background-color: #F2F2F2;
     padding:1em;
-    height: auto;
     -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
     -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
     box-shadow: 0.1em 0.1em 1em lightgrey;
     border-radius: 0.5em;
     margin-bottom: 2em;
 }
-blockquote{
-    border-left: 10px solid steelblue;
+.footer-cont{
+    background-color: lightgrey;
 }
-#footer-section{
-    height: auto;
-}
+
 

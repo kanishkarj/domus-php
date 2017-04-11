@@ -2,7 +2,13 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-
+nav{
+    -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -webkit-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
+    -o-transition:  height 1s ease-in-out,  bottom 1.5s ease-in-out;
+    transition:  height 1s ease-in-out,  bottom 1.5s ease-in-out;
+}
 .nav-bar{
     -webkit-box-shadow: 0em 0em 0em lightgrey;
     -moz-box-shadow: 0em 0em 0em  lightgrey;
@@ -71,7 +77,9 @@ h4{
 #srch-term{
     border-radius: 1em 0em 0em 1em;/*gives rounded corners of the search bar*/
 }
-
+#srch-btn{
+    border-radius: 0em 1em 1em 0em;/*gives rounded corners of the search bar*/
+}
 #title-cont{
     padding: 1em;
     background-color: #F0EFEF;
@@ -86,6 +94,9 @@ h4{
     border-radius: 5px;
 
 
+}
+.btn{
+    border-radius: 0px;
 }
 #card-container{
     padding: 1em;
@@ -108,12 +119,20 @@ h4{
     text-decoration: none;
     color : black;
 }
-
+.navbar-form a{
+    padding-left: 1em;
+}
+.navbar-form input{
+    border-radius: 0px;
+    -webkit-box-shadow: 0em;
+    -moz-box-shadow: 0em;
+    box-shadow: 0em;
+}
 footer{
     margin-top: 1em;
-    -webkit-box-shadow: 0 0px 8px 9px  lightgrey;
-    -moz-box-shadow: 0 0px 8px 9px  lightgrey;
-    box-shadow: 0 0px 8px 9px  lightgrey;
+    -webkit-box-shadow: 0 0px 4px 4.5px  lightgrey;
+    -moz-box-shadow: 0 0px 4px 4.5px  lightgrey;
+    box-shadow: 0 0px 4px 4.5px  lightgrey;
     background-color: #F0EFEF;
     display: block;
 }
@@ -129,13 +148,13 @@ footer h4{
 #search-btn{
     padding-left: 1em;
 }
-#search-inp{
-    border-radius: 0px;
-    -webkit-box-shadow: 0 0px 0px 0px  lightgrey;
-    -moz-box-shadow: 0 0px 0px 0px  lightgrey;
-    box-shadow: 0 0px 0px 0px  lightgrey;
-}
 
+#search{
+    width: 80%;
+    display: none;
+    margin: auto;
+    margin-bottom: 1em;
+}
 
 .scroll-top-wrapper {
     position: fixed;
@@ -183,6 +202,7 @@ footer h4{
 #container{
     width: 80%;
     margin: auto;
+    min-height: 40em;
 }
 }
 @media only screen and (min-width: 700px) {
@@ -190,6 +210,13 @@ footer h4{
 
     }
 }
+.nav-bar ul li:hover{
+    border-bottom-color: steelblue;
+    border-bottom-style: bold ;
+    border-bottom-width: 3px;
+}
 p{
     color: grey !important;
 }
+
+

@@ -31,5 +31,22 @@ $(Document).ready(function () {
 function search_onClick() {
     var q = $('#srch-term').val();
     $('#container').load("php/search.php?q=" + q);
+
+}
+
+function sort1() {
+    $('#container').load("php/sort.php?q=date_upl+DESC");
+}
+function sort2() {
+
+    $('#container').load("php/sort.php?q=date_upl+ASC");
+}
+function sort3() {
+
+    $('#container').load("php/sort.php?q=week_no+DESC");
+}
+function sort4() {
+
+    $('#container').load("php/sort.php?q=week_no+ASC");
 }
 
