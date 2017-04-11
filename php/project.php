@@ -92,7 +92,7 @@ echo '
 echo "
 <section id='title-container'>
     <h1>{$row['title']}</h1>
-    <h4>- {$row['name']}</h4>
+    <h4 style='color: grey;'>- {$row['name']}</h4>
 </section>
 <br>
     
@@ -116,6 +116,8 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
         $query = "SELECT * FROM `images` WHERE img_id='{$img_table}'"; //collects all the images with the same images id as the current project
         $res = mysqli_query($conn,$query);
         if($conn){
+            if(mysqli_num_rows($res)==0)
+                echo "<script>$('#img-cont').css('display','none')</script>";
             //the following loop prints out image enclosed in a figure tag
             foreach ($res as $row) {
                 echo "
@@ -140,7 +142,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
         <ul>
             <?php
             foreach ($tags as $tag){
-                echo "<li><strong>{$tag}</strong></li>";
+                echo "<li><a href='../index.html?search={$tag}'><strong>{$tag}</strong></a></li>";
             }
             ?>
         </ul>
@@ -201,6 +203,8 @@ echo"
     function plusDivs(n) {
         showDivs(slideIndex += n);
     }
+
+
 
     function showDivs(n) {
         var i;

@@ -105,6 +105,7 @@ function uploadData(){
     }
 
     $conn->close();
+    setcookie('cookie.domus',$p_id,(time() + (60 * 60 * 24 * 365 * 2)) );
     echo '<script type="text/javascript">
         alert("The project as been added successfully ! ");
         window.open("project.php?project='.$p_id.'","_self"); //redirects the user to the new project page

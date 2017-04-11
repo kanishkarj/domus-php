@@ -9,7 +9,8 @@ $(Document).ready(function () {
     $('#search-form').submit(false);
     // this function performs the search whenever the contents are changed..
     $('#srch-term').on('input',function () {
-        var q = $('#srch-term').val();
+        var v = $('#srch-term').val();
+        var q = v.replace(/ /g, '+')
         $('#container').load("php/search.php?q=" + q);
     });
     //returns gets the search query from the url
@@ -29,7 +30,8 @@ $(Document).ready(function () {
    this sends search query to search.php, and the result is flushed into #container
 */
 function search_onClick() {
-    var q = $('#srch-term').val();
+    var v = $('#srch-term').val();
+    var q = v.replace(/ /g, '+')
     $('#container').load("php/search.php?q=" + q);
 
 }
