@@ -38,14 +38,16 @@ function srch_onClick() {
     if(url.includes("create")) {
         var r = confirm("You will be redirected to Homepage, all data entered will be lost. Press OK to continue !");
         if (r == true) {
-            var q = $('#srch-term').val();
+            var v = $('#srch-term').val();
+            var q = v.replace(/ /g, '+')
             window.open("../?search=" + q, "_self");
         } else {
 
         }
     }
     else{
-        var q = $('#srch-term').val();
+        var v = $('#srch-term').val();
+        var q = v.replace(/ /g, '+')
         window.open("../?search=" + q, "_self");
     }
 

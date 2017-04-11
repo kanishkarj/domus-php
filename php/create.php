@@ -95,9 +95,10 @@ if (!empty($_POST))
             <h6>The first image will be used as your project cover.</h6>
             <a onClick="add_img()">
                 <span class="glyphicon glyphicon-plus-sign" style="font-size: 2em;"></span>
+                <h4> ^ Add more images</h4>
             </a>
             <br><br>
-            <ul name="images" id="images">
+            <ol name="images" id="images">
                 <li>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="img1">Select image to upload: :</label>
@@ -112,7 +113,7 @@ if (!empty($_POST))
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ol>
 
         </fieldset>
         <hr>
