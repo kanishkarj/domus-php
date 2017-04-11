@@ -1,3 +1,7 @@
+Speed optimisations
+    http://www.htmlgoodies.com/beyond/reference/7-tips-to-make-your-websites-load-faster.html
+         Search for Eliminate 
+
 Logo 
     Ask lamba for the logo
 
@@ -5,13 +9,17 @@ nav bar
 	search
 		search through titles, tags
 		    make a relevance function
-	
+	add highlights upon cursor 
+        Blue
+    
     
 Create page 
         give Cookie
             random string , make database 
         Add a place to add links
-
+        Check for number of images added and allow upload 
+            
+            
 Home Page
     Implement sort routine 
         make least time first (default)
@@ -21,7 +29,7 @@ Home Page
         **Remove uploaders name ,add to contact details
         **Increase spacing
             Maintain spacing between cards for phones 
-
+    
 
 Project details page 
     Disable Html
