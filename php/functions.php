@@ -18,15 +18,6 @@ function dateToWeek($datein,$week_no){
 
 // uploads data into the table
 function uploadData(){
-    $name = $_POST['name'];
-    $ph_no = $_POST['ph_no'];
-    $email = $_POST['email'];
-    $desc = $_POST['desc'];
-    $ppl_no = $_POST['ppl_no'];
-    $tags = $_POST['tags'];
-    $date = date("Y/m/d");
-    $title = $_POST['title'];
-    $week_no = $_POST['week_no'];
 
     $hs = "localhost"; // the host
     $un = "guest"; // username
@@ -34,8 +25,18 @@ function uploadData(){
     $db = "project"; //name of the database
 
     $conn = new mysqli($hs,$un,$pw,$db);
-
+    $desc = mysqli_real_escape_string($conn,$_POST['desc']);
     $p_id = mt_rand(0,600000); // generates random project id
+
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $ph_no = mysqli_real_escape_string($conn,$_POST['ph_no']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+
+    $ppl_no = mysqli_real_escape_string($conn,$_POST['ppl_no']);
+    $tags = mysqli_real_escape_string($conn,$_POST['tags']);
+    $date = date("Y/m/d");
+    $title = mysqli_real_escape_string($conn,$_POST['title']);
+    $week_no = mysqli_real_escape_string($conn,$_POST['week_no']);
 
     if($conn){
 
@@ -95,20 +96,25 @@ function uploadData(){
                 }
             }
             move_uploaded_file($nfrom_path,$nto_path);
+            $img_desct = mysqli_real_escape_string($conn,$_POST['img_desc'. $i]);
             $sql = "INSERT INTO images (img_id,path,descr)
-                VALUES ('{$img_list_id}','{$nto_path}','{$_POST['img_desc'. $i]}')";
+                VALUES ('{$img_list_id}','{$nto_path}','{$img_desct}')";
             $res = mysqli_query($conn,$sql);
         }
+        $img_descr1 = mysqli_real_escape_string($conn,$_POST["img_desc1"]);
         $sql = "INSERT INTO input (p_id,name,title,descr,email,ph_no,ppl_no,week_no,tags,date_upl,img1,img1_desc,images)
-                VALUES ('{$p_id}','{$name}','{$title}','{$desc}','{$email}','{$ph_no}','{$ppl_no}','{$week_no}','{$tags}','{$date}','{$to_path}','{$_POST["img_desc1"]}','{$img_list_id}')";
+                 VALUES ('{$p_id}','{$name}','{$title}','{$desc}','{$email}','{$ph_no}','{$ppl_no}','{$week_no}','{$tags}','{$date}','{$to_path}','{$img_descr1}','{$img_list_id}')";
+        //echo $sql;
         $res = mysqli_query($conn,$sql);
+
+        //echo $res;
     }
 
     $conn->close();
     setcookie('cookie.domus',$p_id,(time() + (60 * 60 * 24 * 365 * 2)) );
     echo '<script type="text/javascript">
-        alert("The project as been added successfully ! ");
-        window.open("project.php?project='.$p_id.'","_self"); //redirects the user to the new project page
+        alert('.$res.'); //"The project as been added successfully ! " 
+       // window.open("project.php?project='.$p_id.'","_self"); //redirects the user to the new project page
     </script>'
     ;
 }

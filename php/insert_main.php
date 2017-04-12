@@ -35,7 +35,8 @@ if($conn){
             if($key == 'p_id')
                 $p_id = $value;
         }
-        $small = substr($desc, 0, 500);
+        $paras = explode("\n", $desc);
+        $small = $paras[0];
         $desc = $small;
         echo "
                 <div id='card-container' class='col-lg-4 col-sm-12' xmlns=\"http://www.w3.org/1999/html\">

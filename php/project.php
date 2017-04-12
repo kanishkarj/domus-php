@@ -87,7 +87,7 @@ echo '
 
 <main>
 <?php
-    $tags = explode(" ", $row['tags']); //splits the tags into seperate tags
+    $tags = explode(",", $row['tags']); //splits the tags into seperate tags
     $paras = explode("\n", $row['descr']);//splits description into different paragraphs
 echo "
 <section id='title-container'>
