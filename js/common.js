@@ -28,22 +28,20 @@ $(document).ready(function(){
 
 function a_onClick(){
     $("#search").fadeToggle("fast"); //toggles the visibility of the search bar
-    $('#search-item').toggleClass('active'); //toggles the sctive state of search button on the navbar
+    $('#search-item').toggleClass('active'); //toggles the active state of search button on the navbar
 }
 function srch_onClick() {
     var txt;
     var url = window.location.href;//url of current page
-    /*the below if statement checks whether current page is create.php if it is, it informs the user abt the loss
-     of the entered data*/
+    /*the below if statement checks whether current page is create.php . If it is, it warns the user about the possible loss
+     of entered data*/
     if(url.includes("create")) {
         var r = confirm("You will be redirected to Homepage, all data entered will be lost. Press OK to continue !");
         if (r == true) {
             var v = $('#srch-term').val();
             var q = v.replace(/ /g, '+')
             window.open("../?search=" + q, "_self");
-        } else {
-
-        }
+        } 
     }
     else{
         var v = $('#srch-term').val();
