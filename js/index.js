@@ -3,14 +3,16 @@
  */
 
 $(Document).ready(function () {
+
+    //SELECT * FROM `input` ORDER BY date_upl DESC
    //loads all projects
-    $('#container').load("php/insert_main.php");
+    $('#container').load("php/insert_main.php?q=date_upl+DESC");
     //disables the normal functioning of search button
     $('#search-form').submit(false);
     // this function performs the search whenever the contents are changed..
     $('#srch-term').on('input',function () {
         var v = $('#srch-term').val();
-        var q = v.replace(/ /g, '+')
+        var q = v.replace(/ /g, '+');
         $('#container').load("php/search.php?q=" + q);
     });
     //returns gets the search query from the url
@@ -25,30 +27,27 @@ $(Document).ready(function () {
         $('#srch-term').attr('value',sq);
         $('#container').load("php/search.php?q=" + sq);
     }
+    $("#select-sort").on('change',function () {
+        var sel_id = $("#select-sort").val();
+        switch(sel_id){
+            case "0" :$('#container').load("php/insert_main.php?q=date_upl+DESC");
+                break;
+            case "1" : $('#container').load("php/insert_main.php?q=date_upl+ASC");
+                break;
+            case "2" :$('#container').load("php/insert_main.php?q=week_no+DESC");
+                break;
+            case "3" :$('#container').load("php/insert_main.php?q=week_no+ASC");
+                break;
+        }
+    });
 });
 /* this function is executed when the search button is clicked
    this sends search query to search.php, and the result is flushed into #container
 */
 function search_onClick() {
     var v = $('#srch-term').val();
-    var q = v.replace(/ /g, '+')
+    var q = v.replace(/ /g, '+');
     $('#container').load("php/search.php?q=" + q);
-
 }
 
-function sort1() {
-    $('#container').load("php/sort.php?q=date_upl+DESC");
-}
-function sort2() {
-
-    $('#container').load("php/sort.php?q=date_upl+ASC");
-}
-function sort3() {
-
-    $('#container').load("php/sort.php?q=week_no+DESC");
-}
-function sort4() {
-
-    $('#container').load("php/sort.php?q=week_no+ASC");
-}
 

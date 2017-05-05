@@ -1,0 +1,92 @@
+New edits
+THU, APR 20 2017
+    #add edit page
+    #edit page checks for cookie, else sends the user a mail giving link to edit( the link can contain loop holes so think over it properly)
+    #navbar persistent when one scrolls down
+    #add links table
+
+Speed optimisations
+    http://www.htmlgoodies.com/beyond/reference/7-tips-to-make-your-websites-load-faster.html
+         Search for Eliminate 
+
+Logo 
+    Ask lamba for the logo
+
+nav bar
+	search
+		search through titles, tags
+		    make a relevance function
+	add highlights upon cursor 
+        Blue
+    
+    
+Create page 
+        give Cookie
+            random string , make database 
+        Add a place to add links
+        Check for number of images added and allow upload 
+            
+            
+Home Page
+    Implement sort routine 
+        make least time first (default)
+        provide : time,  
+    Cards
+        **Make the whole thing  clickable
+        **Remove uploaders name ,add to contact details
+        **Increase spacing
+            Maintain spacing between cards for phones 
+    
+
+Project details page 
+    Disable Html
+    Main image 
+    Title 
+    Uploader name
+    Card :Project description
+        Description 
+        Images
+            scrollable + description
+        Tags
+            implement the button to search the main page for the tag.
+        Links 
+            implement a table for the descripition and the links
+    Card : project details
+           
+
+important 
+    Filter image upload.
+    limit upload to five 
+
+
+Form 
+	Name of the uploader : Enter name 
+	Title  of the project : Enter Title
+	What is the project about ? : 
+	Images 
+		Minimum one
+		Descriptions of all images
+		
+	contact info
+		email id : needed
+			verify validity
+		phone no. (optional )
+			"
+	how many people would work on this project
+	how long will u recruit
+	tags
+	any links :
+    Date uploaded 
+		dont' take it from the user , used for sorting
+    
+form changes
+    make img compulsary
+    make the site responsive
+    description dynamic
+    inform which is the prime image
+
+final tweaks
+	make the whole card clickable.
+	add spaces between cards.
+	
+		

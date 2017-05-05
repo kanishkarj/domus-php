@@ -5,17 +5,38 @@
  * Date: 9/4/17
  * Time: 5:10 AM
  */
+
+include ('init.php');
+
 // every time  this is run > $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
 // replace the above script to server end processing to reduce latency 
 // converts upload date and week no. to no. of days weeks left
 function dateToWeek($datein,$week_no){
-    $timestamp = strtotime($datein . ' + '.$week_no.' weeks ');
-    $date = date("Y/m/d",$timestamp);
-    $curr = time();
-    $diff = floor(($timestamp - $curr)/(60*60*24)) + 1;
-    return floor($diff/7) . ' weeks ' . ($diff%7) . ' days';
+    if($week_no == 0){
+        return "Open";
+    }
+    else{
+        $timestamp = strtotime($datein . ' + '.$week_no.' weeks ');
+        $date = date("Y/m/d",$timestamp);
+        $curr = time();
+        $diff = floor(($timestamp - $curr)/(60*60*24)) + 1;
+        if($diff < 0)
+            return 'Recruitments closed';
+        else
+            return floor($diff/7) . ' weeks ' . ($diff%7) . ' days';
+    }
 }
-
+ function recr_check($datein,$week_no){
+     $timestamp = strtotime($datein . ' + '.$week_no.' weeks ');
+     $date = date("Y/m/d",$timestamp);
+     $curr = time();
+     if($curr>$date){
+         return "Recruiting";
+     }
+     else{
+         return "Recruitment complete";
+     }
+ }
 // uploads data into the table
 function uploadData(){
     $name = $_POST['name'];

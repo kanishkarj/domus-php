@@ -2,6 +2,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+
 nav{
     -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
     -webkit-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
@@ -15,9 +16,6 @@ nav{
     box-shadow: 0em 0em 0em  lightgrey;
     border-radius: 0px !important;
 
-}
-h4{
-    color: lightslategray;
 }
 
 /*The below navbar styles are to avoid the collapse of the navbar as the screen width reduces..*/
@@ -48,6 +46,12 @@ h4{
 .nav-bar  a:hover{
     color: lightslategray !important;
 }
+.navbar-nav  a:hover{
+    border-bottom: 0.25em solid steelblue;
+}
+.navbar-nav  a{
+    border-bottom: 0.25em solid rgba(0,0,0,0);
+}
 .navbar-right{
     float: right !important;
 }
@@ -71,6 +75,16 @@ h4{
     z-index:3;
 }
 
+.navbar-form a{
+    padding-left: 1em;
+}
+.navbar-form input{
+    border-radius: 0px;
+    -webkit-box-shadow: 0em;
+    -moz-box-shadow: 0em;
+    box-shadow: 0em;
+}
+
 .form-group{
     display: inline;
 }
@@ -89,17 +103,14 @@ h4{
 #title-cont{
     padding: 1em;
     background-color: #F0EFEF;
-
-     margin-bottom: 2em;
-
+    margin-bottom: 2em;
 }
+
 .cards{
     border-style: solid;
     border-width: 1.5px;
     border-color:  #F0EFEF;
     border-radius: 5px;
-
-
 }
 .btn{
     border-radius: 0px;
@@ -125,15 +136,10 @@ h4{
     text-decoration: none;
     color : black;
 }
-.navbar-form a{
-    padding-left: 1em;
+.cards #img-cont{
+   border-bottom: solid steelblue 0.25em;
 }
-.navbar-form input{
-    border-radius: 0px;
-    -webkit-box-shadow: 0em;
-    -moz-box-shadow: 0em;
-    box-shadow: 0em;
-}
+
 footer{
     margin-top: 1em;
     -webkit-box-shadow: 0 0px 4px 4.5px  lightgrey;
@@ -151,6 +157,8 @@ footer h4{
     float: left;
     color: steelblue !important;
 }
+
+
 #search-btn{
     padding-left: 1em;
 }
@@ -201,9 +209,13 @@ footer h4{
     line-height: inherit;
     color: darkgray;
 }
+
+
 #text-cont{
     margin: 1em;
+
 }
+
 @media only screen and (min-width: 700px) {
 #container{
     width: 80%;
@@ -216,13 +228,21 @@ footer h4{
 
     }
 }
-.nav-bar ul li:hover{
-    border-bottom-color: steelblue;
-    border-bottom-style: bold ;
-    border-bottom-width: 3px;
+
+h4{
+    color: lightslategray;
 }
+
 p{
-    color: grey !important;
+    color: grey;
 }
+
+#card-footer{
+    margin-top: 1em;
+    padding: 0.5em;
+    border-top: 0.25em solid gray;
+    font-weight: bold;
+}
+
 
 

@@ -24,7 +24,7 @@
                 <a class="navbar-brand" href="index.html">Domus</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class=""><a href="php/create.php">Create</a></li>
+                <li class="li-header"><a href="php/create.php">Create</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -51,23 +51,19 @@
 </header>
 <section id="title-cont" class="col-lg-12">
     <h1>All Projects</h1>
-    <h3>Sorted by
-    <div class="dropdown">
-        <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">Sort
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a onclick="sort1()">Date uploaded(Desc)</a></li>
-            <li><a onclick="sort2()">Date uploaded(Asc)</a></li>
-            <li><a onclick="sort3()">Time left(Desc)</a></li>
-            <li><a onclick="sort4()">Time left(Asc)</a></li>
-        </ul>
-    </div>
-    </h3>
+    <p>Sorted by   :
+    <select name="select-sort" id="select-sort">
+        <option value="0">Date uploaded(Desc)</option>
+        <option value="1">Date uploaded(Asc)</option>
+        <option value="2">Time left(Desc)</option>
+        <option value="3">Time left(Asc)</option>
+    </select>
+    </p>
 </section>
-<main id="container" class="container-fluid">
-<p >
 
-</p>
+<main id="container" class="container-fluid">
+
+
 </main>
 <div class="scroll-top-wrapper ">
   <span class="scroll-top-inner">
