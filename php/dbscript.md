@@ -1,0 +1,4 @@
+--Run the following commands to create the database and its tables
+CREATE DATABASE DOMUS;
+CREATE TABLE `DOMUS`.`images` ( `i_id` INT(11) NOT NULL AUTO_INCREMENT , `img_id` VARCHAR(15) NOT NULL , `descr` VARCHAR(1000) NOT NULL , `path` VARCHAR(255) NOT NULL , PRIMARY KEY (`i_id`)) ENGINE = InnoDB;
+CREATE TABLE `domus`.`input` ( `p_id` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `title` VARCHAR(255) NOT NULL , `descr` VARCHAR(5000) NOT NULL , `email` VARCHAR(255) NOT NULL , `ph_no` VARCHAR(255) NOT NULL , `ppl_no` INT(11) NOT NULL , `tags` VARCHAR(255) NOT NULL , `date_upl` DATE NOT NULL , `week_no` INT(2) NOT NULL , `img1` VARCHAR(255) NOT NULL , `img1_desc` VARCHAR(1000) NOT NULL , `images` VARCHAR(255) NOT NULL , PRIMARY KEY (`p_id`)) ENGINE = InnoDB;
