@@ -6,14 +6,14 @@ $(Document).ready(function () {
 
     //SELECT * FROM `input` ORDER BY date_upl DESC
    //loads all projects
-    $('#container').load("php/insert_main.php?q=date_upl+DESC");
+    $('#container').load("app/controllers/insert_main.php?q=date_upl+DESC");
     //disables the normal functioning of search button
     $('#search-form').submit(false);
     // this function performs the search whenever the contents are changed..
     $('#srch-term').on('input',function () {
         var v = $('#srch-term').val();
         var q = v.replace(/ /g, '+');
-        $('#container').load("php/search.php?q=" + q);
+        $('#container').load("app/controllers/search.php?q=" + q);
     });
     //returns gets the search query from the url
     function getQueryStringValue (key) {
@@ -25,18 +25,18 @@ $(Document).ready(function () {
     if(sq.length>0){
         a_onClick();
         $('#srch-term').attr('value',sq);
-        $('#container').load("php/search.php?q=" + sq);
+        $('#container').load("app/controllers/search.php?q=" + sq);
     }
     $("#select-sort").on('change',function () {
         var sel_id = $("#select-sort").val();
         switch(sel_id){
-            case "0" :$('#container').load("php/insert_main.php?q=date_upl+DESC");
+            case "0" :$('#container').load("app/controllers/insert_main.php?q=date_upl+DESC");
                 break;
-            case "1" : $('#container').load("php/insert_main.php?q=date_upl+ASC");
+            case "1" : $('#container').load("app/controllers/insert_main.php?q=date_upl+ASC");
                 break;
-            case "2" :$('#container').load("php/insert_main.php?q=week_no+DESC");
+            case "2" :$('#container').load("app/controllers/insert_main.php?q=week_no+DESC");
                 break;
-            case "3" :$('#container').load("php/insert_main.php?q=week_no+ASC");
+            case "3" :$('#container').load("app/controllers/insert_main.php?q=week_no+ASC");
                 break;
         }
     });
@@ -47,7 +47,7 @@ $(Document).ready(function () {
 function search_onClick() {
     var v = $('#srch-term').val();
     var q = v.replace(/ /g, '+');
-    $('#container').load("php/search.php?q=" + q);
+    $('#container').load("app/controllers/search.php?q=" + q);
 }
 
 

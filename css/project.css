@@ -3,21 +3,19 @@ The below media queries changes the width on the contents as per the screen widt
 else 80%.
 */
 #bg_img{
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position:top;
+    width: 100%;
+    height: auto;
+}
+header{
+    width: 100%;
+    height: auto;
 }
 @media only screen and (min-width: 700px) {
     main{
         width: 80%;
         margin: auto;
     }
-    header{
-        height: 35em;
-        width: 100%;
 
-    }
     #img-cont{
         width: 80%;
     }
@@ -28,11 +26,7 @@ else 80%.
         margin: auto;
         padding: 1em;
     }
-    header{
-        height: 25em;
-        width: 100%;
 
-    }
     h1{
         font-size: 2em;
     }
@@ -56,8 +50,8 @@ main{
 }
 #tag-cont ul li {
     float: left;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 #main-cont{
     background-color: #F2F2F2;
@@ -74,9 +68,9 @@ h6{
 
 }
 
-strong{
+.tag-item{
     background-color: lightgrey;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     color: steelblue;
     padding: 0.5em;
     padding-right: 1em;
@@ -85,20 +79,10 @@ strong{
 
 }
 
-figure{
-    padding: 0.5em;
-    -webkit-box-shadow: 0.1em 0.1em 1em lightgrey;
-    -moz-box-shadow: 0.1em 0.1em 1em lightgrey;
-    box-shadow: 0.1em 0.1em 1em lightgrey;
-}
-figure figcaption{
-    margin: 1em;
-
-}
 figcaption{
     color: lightslategray !important;
     text-align: center;
-    margin: 1em;
+
 }
 .fig-cont{
     padding: 0.5em;
@@ -122,5 +106,6 @@ blockquote{
 .footer-cont{
     background-color: lightgrey;
 }
+
 
 
