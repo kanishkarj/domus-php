@@ -14,6 +14,7 @@ A website to share projects and find new collaborators, this website was born ou
 ### Installation instructions
 
 * todo
+* $ npm install to-markdown
 
 
 ## License
