@@ -2,7 +2,6 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-
 nav{
     -moz-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
     -webkit-transition: height 1s ease-in-out, bottom 1.5s ease-in-out;
@@ -221,15 +220,10 @@ footer h4{
 }
 
 @media only screen and (min-width: 700px) {
-#container{
-    width: 80%;
-    margin: auto;
-    min-height: 40em;
-}
-}
-@media only screen and (min-width: 700px) {
     #container{
-
+        width: 80%;
+        margin: auto;
+        min-height: 40em;
     }
 }
 

@@ -1,4 +1,6 @@
 <?php
+
+
 $id=$_GET['project'];
 
 include('../controllers/functions.php');
@@ -33,18 +35,15 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/w3.css">
     <link rel="stylesheet" href="../../css/project.css">
-    <script src="../../js/common.js"></script>
-    <script src="../../js/index.js"></script>
-    <script src="https://use.fontawesome.com/4b257711cc.js"></script>
+
     <title>
         Domus
     </title>
 </head>
+
 <body>
 <header >  <!--sets the background image for the header -->
    <nav class="nav-bar navbar-light">
@@ -99,12 +98,11 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
     ?>
 
     <section id='main-cont'>
+       <section id='project_desc'>
         <?php
-        foreach ($paras as $para){
-            echo "<p>{$para}</p>";
-        }
+        echo  $row['descr'];
         ?>
-
+       </section>
         <br>
         <div class="w3-content w3-display-container" id="img-cont">
             <?php
@@ -118,7 +116,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
                 foreach ($res as $row) {
                     echo "
                         <div class=\"w3-display-container mySlides\" style=\"width:100%\">
-                           <img src=\"{$row['path']}\" style=\"width:100%\">
+                           <img src=\"{$row['path']}\" style=\"width:100%;\">
                             <div class=\"w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black\">
                                 {$row['descr']} 
                             </div>
@@ -192,27 +190,15 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
     <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
 </footer>
 
-<script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
-    }
-</script>
-
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/fontawesome.js"></script>
+<script src="../../js/showdown.min.js"></script>
+<script src="../../js/project.js"></script>
 </body>
+
 </html>
 <?
 }

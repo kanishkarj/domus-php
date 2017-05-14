@@ -13,27 +13,22 @@ header{
 @media only screen and (min-width: 700px) {
     main{
         width: 80%;
-        margin: auto;
     }
-
-
 }
 @media only screen and (max-width: 700px) {
     main{
         width: 100%;
-        margin: auto;
         padding: 1em;
     }
-
     h1{
         font-size: 2em;
     }
-    #img-cont{
-        width: 100%;
-    }
-
+}
+#img-cont{
+    width: 100%;
 }
 main{
+    margin: auto;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -52,17 +47,9 @@ main{
     margin-top: 1em;
     margin-bottom: 1em;
 }
-#main-cont{
-
-}
-h6{
-
-}
 #title-container{
     text-align: center;
-
 }
-
 .tag-item{
     background-color: #f1f3f4;
     border-radius: 0.25em;
@@ -73,17 +60,13 @@ h6{
     margin: 0.5em;
 
 }
-
 #tag-cont a{
     text-decoration: none;
 }
-
 #tag-cont strong:hover{
     background-color: steelblue;
     color: #f1f3f4;
 }
-
-
 figcaption{
     color: lightslategray !important;
     text-align: center;
@@ -95,11 +78,9 @@ figcaption{
 ul{
     list-style: none;
 }
-
 blockquote{
     border-left: 0px;
 }
-
 blockquote h6{
     color: steelblue;
     font-weight: bold;

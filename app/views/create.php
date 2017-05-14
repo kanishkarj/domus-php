@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="../../css/create.css">
     <link rel="stylesheet" href="../../css/common.css">
 
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/create.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/common.js"></script>
-    <script src="../../js/index.js"></script>
-    <script src="https://use.fontawesome.com/4b257711cc.js"></script>
 
     <title>
         Domus
@@ -158,6 +152,14 @@
         <h4>Domus</h4>
         <a target="_blank" href="https://github.com/kanishkarj/domus"><i class="fa fa-github" aria-hidden="true"></i></a>
     </footer>
+
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/create.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../../js/fontawesome.js"></script>
+
 </body>
 </html>
 
