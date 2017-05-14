@@ -13,6 +13,7 @@ function submit_click() {
     var create_form = $('#create-form');
     var img_check = true;
 
+    $('#create-form').children(".form-img").css('color','red');
 
     if(img_check){
         create_form.submit();

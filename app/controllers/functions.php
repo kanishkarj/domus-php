@@ -6,7 +6,7 @@
  * Time: 5:10 AM
  */
 
-require_once '../init.php';
+
 
 // every time  this is run > $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
 // replace the above script to server end processing to reduce latency 
@@ -34,7 +34,7 @@ function dateToWeek($datein,$week_no){
          return "Recruiting";
      }
      else{
-         return "Recruitment complete";
+         return "closed";
      }
  }
 // uploads data into the table
@@ -51,7 +51,7 @@ function uploadData(){
 
     $p_id = mt_rand(0,600000); // generates random project id
 
-    $conn = new mysqli($hs,$un,$pw,$db);
+    require_once '../init.php';
 
     if($conn){
 
@@ -62,7 +62,7 @@ function uploadData(){
         //checks if the project id exists, if it does loop till the new one doesnt exist
         while(1){
             $res = mysqli_query($conn, "SELECT * FROM `input` WHERE p_id = {$p_id}");
-            if($res->num_rows > 0){
+            if($res->num_rows){
                 $p_id = mt_rand(0,600000);
             }
             else
@@ -96,7 +96,20 @@ function uploadData(){
 
         $i = 0;
         ///adds the images to the image list
+
+        $img_is_php = false;
         foreach($_FILES as $file){
+            $ftype =$file['type'];
+
+            if(strpos($ftype, 'image') !== 0){
+
+                echo '<script type="text/javascript">
+                    alert("The uploaded files have to be only images, please check the files you have uploaded.");
+                    window.history.back();
+                    </script>'
+                ;
+                exit();
+            }
             $i++;
             if($i==1)
                 continue;
@@ -110,6 +123,8 @@ function uploadData(){
                     break;
                 }
             }
+
+
             move_uploaded_file($nfrom_path,$nto_path);
             $sql = "INSERT INTO images (img_id,path,descr)
                 VALUES ('{$img_list_id}','{$nto_path}','{$_POST['img_desc'. $i]}')";
@@ -122,7 +137,7 @@ function uploadData(){
 
     $conn->close();
     setcookie('cookie.domus',$p_id,(time() + (60 * 60 * 24 * 365 * 2)) );
-    echo '<script type="text/javascript">
+   echo '<script type="text/javascript">
         alert("The project as been added successfully ! ");
         window.open("project.php?project='.$p_id.'","_self"); //redirects the user to the new project page
     </script>'

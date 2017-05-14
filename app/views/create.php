@@ -1,15 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kanishkarj
- * Date: 8/4/17
- * Time: 3:10 PM
- */
-include('../controllers/functions.php');
-//checks if the submit button has been pressed or not.
-if (!empty($_POST))
-    uploadData();// uploads the entry from the user into the database.
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,3 +160,16 @@ if (!empty($_POST))
     </footer>
 </body>
 </html>
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: kanishkarj
+ * Date: 8/4/17
+ * Time: 3:10 PM
+ */
+include('../controllers/functions.php');
+//checks if the submit button has been pressed or not.
+if (!empty($_POST))
+    uploadData();// uploads the entry from the user into the database.
+?>

@@ -28,11 +28,10 @@ if($conn){
             $date = $row['date_upl'];
             $p_id = $row['p_id'];
             $week = $row['week_no'];
-
+            $img = str_replace('..','app',$img);
             //extracts the first paragraph from the description
             $small = explode('\n',$desc);
             $desc = $small[0];
-
             //flushes information of each project into cards
             echo "
                 <div id='card-container' class='col-lg-4 col-sm-12' xmlns=\"http://www.w3.org/1999/html\">
@@ -41,7 +40,7 @@ if($conn){
                     <a href='app/views/project.php?project={$p_id}'>
                     <div>
                     <div id='img-cont'>
-                        <img src='php/{$img}' alt='{$img_desc}'>
+                        <img src='$img' alt='{$img_desc}'>
                     </div>
                     <article id='text-cont'>
                     <h3>{$title}</h3>

@@ -117,7 +117,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
                 //the following loop prints out image enclosed in a figure tag
                 foreach ($res as $row) {
                     echo "
-                        <div class=\"w3-display-container mySlides\">
+                        <div class=\"w3-display-container mySlides\" style=\"width:100%\">
                            <img src=\"{$row['path']}\" style=\"width:100%\">
                             <div class=\"w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black\">
                                 {$row['descr']} 
@@ -150,7 +150,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
 
 <article class='footer-cont'>
 <blockquote class='col-lg-6 col-sm-12'>
- <h6>Email<br></h6>
+ <h6>EMAIL<br></h6>
     <h4>
         <?php
             echo"
@@ -159,19 +159,19 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
     </h4>
 </blockquote>
 <blockquote class='col-lg-6 col-sm-12'>
-  <h6>phone no.</h6> 
+  <h6>PHONE NO.</h6>
     <h4>
         <?=$ph_no;?>
     </h4>
 </blockquote>
 <blockquote class='col-lg-6 col-sm-12'>
- <h6>Recruiting till<br></h6>
+ <h6>RECRUITING TILL<br></h6>
     <h4>
         <?=$weekop;?>
     </h4>
 </blockquote>
 <blockquote class='col-lg-6 col-sm-12'>
-<h6>Total recruits</h6> 
+<h6>TOTAL RECRUITS</h6>
         <h4>
             <?=$ppl_no;?> people
         </h4>
@@ -200,8 +200,6 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
         showDivs(slideIndex += n);
     }
 
-
-
     function showDivs(n) {
         var i;
         var x = document.getElementsByClassName("mySlides");
@@ -213,6 +211,7 @@ $weekop =dateToWeek($row['date_upl'],$row['week_no']);
         x[slideIndex-1].style.display = "block";
     }
 </script>
+
 </body>
 </html>
 <?
